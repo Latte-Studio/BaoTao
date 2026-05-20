@@ -1,0 +1,192 @@
+/* ==========================================
+   首页样式 - index.css
+   ========================================== */
+
+/* ---- Hero 区域 ---- */
+.hero-section {
+    background: #fff;
+    padding: 12px 0;
+}
+.hero-layout {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 12px;
+    height: 320px;
+}
+
+/* ---- 侧边分类 ---- */
+.side-categories {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+.side-cat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-light);
+}
+.side-cat-item:last-child { border-bottom: none; }
+.side-cat-item:hover { background: #fff5f0; color: var(--primary); }
+.side-cat-item img { width: 24px; height: 24px; }
+.side-cat-item .arrow { margin-left: auto; color: #ccc; font-size: 10px; }
+
+/* ---- 轮播图 ---- */
+.carousel-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.carousel {
+    flex: 1;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+}
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+.carousel-slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+.carousel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,.35);
+    color: #fff;
+    width: 32px; height: 48px;
+    border-radius: var(--radius);
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+    z-index: 2;
+}
+.carousel-btn:hover { background: rgba(0,0,0,.6); }
+.carousel-btn.prev { left: 8px; }
+.carousel-btn.next { right: 8px; }
+.carousel-dots {
+    position: absolute;
+    bottom: 10px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+}
+.carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.6);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.carousel-dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* ---- 快速入口 ---- */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.quick-link {
+    background: #fff5f0;
+    border-radius: var(--radius);
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    border: 1px solid var(--border-light);
+}
+.quick-link:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.quick-link .ql-icon { font-size: 20px; }
+
+/* ---- 商品分类 ---- */
+.section-categories { padding: 24px 0 8px; }
+.section-header { margin-bottom: 16px; }
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    position: relative;
+    padding-left: 12px;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 3px; bottom: 3px;
+    width: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+}
+@media (max-width: 900px) { .category-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+.cat-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+.cat-card img { width: 44px; height: 44px; }
+.cat-card span {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* ---- 推荐商品 ---- */
+.section-products { padding: 16px 0 40px; }
+
+/* 排序栏 */
+.sort-bar {
+    display: flex; gap: 4px;
+}
+.sort-btn {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+.sort-btn.active, .sort-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}

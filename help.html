@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帮助中心 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<!-- 顶部通知栏 -->
+<div class="notice-bar">
+  <div class="container">
+    <span>欢迎来到宝淘！</span>
+    <div class="notice-links">
+      <a href="login.html">请登录</a>
+      <a href="register.html">免费注册</a>
+      <a href="user.html">我的淘宝</a>
+      <a href="cart.html">购物车</a>
+    </div>
+  </div>
+</div>
+
+<!-- 主导航 -->
+<header class="main-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-icon">🍑</div>
+        宝淘
+      </a>
+    </div>
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="搜索商品、品牌、店铺...">
+      <button id="searchBtn">搜索</button>
+    </div>
+    <div class="header-actions">
+      <div id="headerUserArea"><a href="login.html">登录</a> <span style="color:var(--text-muted);margin:0 2px">|</span> <a href="register.html">注册</a></div>
+      <a href="cart.html" class="cart-btn">
+        🛒 购物车
+        <span class="cart-count" id="cartCount" style="display:none">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container" style="max-width:900px;padding:32px 16px">
+    <!-- 购物指南 -->
+    <section class="help-section" id="guide">
+      <h2 class="section-title" style="margin-bottom:20px;border-left:4px solid var(--primary);padding-left:12px">购物指南</h2>
+
+      <div class="help-card" id="register-guide">
+        <h3>免费注册</h3>
+        <p>1. 点击页面右上角「免费注册」按钮进入注册页面。</p>
+        <p>2. 填写用户名（3-20个字符）、密码（至少6位）、昵称等基本信息。</p>
+        <p>3. 选择注册角色：买家（普通购物用户）或卖家（开店商户）。</p>
+        <p>4. 点击「立即注册」按钮即可完成注册，注册成功后自动跳转登录页。</p>
+      </div>
+
+      <div class="help-card" id="member-rights">
+        <h3>会员权益</h3>
+        <ul>
+          <li><strong>买家权益：</strong>享受全站商品浏览、搜索、购物车、下单、评价等完整购物体验。支持多种支付方式和便捷的售后服务。</li>
+          <li><strong>卖家权益：</strong>可自主发布和管理商品，查看全部订单并处理发货，管理店铺经营数据。</li>
+          <li><strong>管理员权益：</strong>拥有系统最高权限，可管理所有用户、查看全部订单、管理商品和系统配置。</li>
+        </ul>
+      </div>
+
+      <div class="help-card" id="shopping-flow">
+        <h3>购物流程</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-num">1</div>
+            <div><strong>浏览商品</strong><br>通过首页分类导航、搜索框或商品推荐找到心仪商品。</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">2</div>
+            <div><strong>加入购物车</strong><br>点击商品详情页的「加入购物车」按钮，可调整数量。</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">3</div>
+            <div><strong>提交订单</strong><br>在购物车中勾选商品，填写收货信息，确认无误后提交订单。</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">4</div>
+            <div><strong>支付货款</strong><br>在订单支付页面确认金额，点击「确认支付」完成付款。</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">5</div>
+            <div><strong>等待发货</strong><br>卖家处理订单并发货，你可以在「我的订单」中查看物流状态。</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">6</div>
+            <div><strong>确认收货</strong><br>收到商品后，在「我的订单」中点击「确认收货」完成交易。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 配送服务 -->
+    <section class="help-section" id="delivery">
+      <h2 class="section-title" style="margin-bottom:20px;border-left:4px solid var(--primary);padding-left:12px">配送服务</h2>
+
+      <div class="help-card" id="delivery-methods">
+        <h3>配送方式</h3>
+        <ul>
+          <li><strong>快递配送：</strong>与主流快递公司合作，覆盖全国大部分地区。一般城市2-3天送达，偏远地区3-5天。</li>
+          <li><strong>同城配送：</strong>部分城市支持当日达或次日达服务，具体以商品页标注为准。</li>
+          <li><strong>上门自提：</strong>支持到指定自提点取货，免收配送费，具体自提点地址以订单信息为准。</li>
+        </ul>
+      </div>
+
+      <div class="help-card" id="self-pickup">
+        <h3>上门自提</h3>
+        <p>1. 下单时在收货地址中选择「自提」选项，并选择就近的自提点。</p>
+        <p>2. 订单状态更新为「待收货」后，即可前往自提点取货。</p>
+        <p>3. 到店后出示订单号或手机号，经工作人员确认后即可取走商品。</p>
+        <p>4. 自提订单需在到货通知后7天内完成取件，超时将自动退回。</p>
+      </div>
+
+      <div class="help-card" id="shipping-fee">
+        <h3>运费说明</h3>
+        <ul>
+          <li>单笔订单满99元包邮，未满99元收取基础运费8元。</li>
+          <li>大件商品（如家电、家具）可能收取额外运费，具体以结算页面显示为准。</li>
+          <li>自提订单免收运费。</li>
+          <li>退换货产生的运费，如为商品质量问题由平台承担；非质量问题由买家承担。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 售后服务 -->
+    <section class="help-section" id="aftersale">
+      <h2 class="section-title" style="margin-bottom:20px;border-left:4px solid var(--primary);padding-left:12px">售后服务</h2>
+
+      <div class="help-card" id="refund-guide">
+        <h3>退款说明</h3>
+        <ul>
+          <li><strong>未发货退款：</strong>订单提交后、卖家发货前，买家可取消订单，系统自动全额退款。</li>
+          <li><strong>已发货退款：</strong>收到商品后如有问题，可在「我的订单」中申请退款，卖家审核通过后安排退款。</li>
+          <li>退款将原路返回至支付账户，一般1-3个工作日到账。</li>
+          <li>虚拟商品、定制商品一经售出不支持无理由退款。</li>
+        </ul>
+      </div>
+
+      <div class="help-card" id="return-policy">
+        <h3>退换货政策</h3>
+        <p>自签收之日起7天内，商品保持全新状态（未拆封、未使用、不影响二次销售），可申请无理由退换货。</p>
+        <p>以下情况不适用无理由退换：</p>
+        <ul>
+          <li>定作商品、鲜活易腐商品、数字化商品（充值卡等）</li>
+          <li>报纸、期刊等时效性商品</li>
+          <li>经拆封或使用导致商品价值受损的商品</li>
+        </ul>
+        <p>如商品存在质量问题，不受以上时间限制，可随时联系客服处理。</p>
+      </div>
+
+      <div class="help-card" id="repair-service">
+        <h3>维修服务</h3>
+        <ul>
+          <li>电子数码类商品享受厂家保修服务，保修期以商品详情页标注为准。</li>
+          <li>保修期内非人为损坏，可联系卖家或直接联系厂家售后进行免费维修。</li>
+          <li>保修期外或人为损坏，提供有偿维修服务，具体费用以维修评估为准。</li>
+          <li>如需维修，请在「我的订单」中找到对应商品，联系卖家客服发起维修申请。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 关于宝淘 -->
+    <section class="help-section" id="about">
+      <h2 class="section-title" style="margin-bottom:20px;border-left:4px solid var(--primary);padding-left:12px">关于宝淘</h2>
+
+      <div class="help-card" id="about-us">
+        <h3>关于我们</h3>
+        <p>宝淘是一个仿淘宝电商学习平台项目，旨在通过实践的方式学习 Web 前后端开发技术。项目采用 Node.js + Express 后端、MySQL 数据库、原生 HTML/CSS/JavaScript 前端技术栈构建。</p>
+        <p>本项目仅供学习交流使用，不涉及任何真实商业交易。</p>
+      </div>
+
+      <div class="help-card" id="contact-us">
+        <h3>联系我们</h3>
+        <ul>
+          <li><strong>项目地址：</strong>本地开发环境 localhost:3000</li>
+          <li><strong>技术栈：</strong>Node.js / Express / MySQL / HTML / CSS / JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="help-card" id="legal-notice">
+        <h3>法律声明</h3>
+        <p>本站为 Web 编程课程学习项目，所有商品信息、图片、价格等均为虚拟数据，不构成任何商业要约或承诺。</p>
+        <p>本站不收集、不存储任何真实用户个人信息。所有数据仅存于本地 MySQL 数据库中，不会上传至任何外部服务器。</p>
+        <p>本站使用的品牌名称、商标等仅用于教学演示目的，版权归原作者所有。</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- 页脚 -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>购物指南</h4>
+        <a href="help.html#register-guide">免费注册</a>
+        <a href="help.html#member-rights">会员权益</a>
+        <a href="help.html#shopping-flow">购物流程</a>
+      </div>
+      <div class="footer-col">
+        <h4>配送服务</h4>
+        <a href="help.html#delivery-methods">配送方式</a>
+        <a href="help.html#self-pickup">上门自提</a>
+        <a href="help.html#shipping-fee">运费说明</a>
+      </div>
+      <div class="footer-col">
+        <h4>售后服务</h4>
+        <a href="help.html#refund-guide">退款说明</a>
+        <a href="help.html#return-policy">退换货政策</a>
+        <a href="help.html#repair-service">维修服务</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于宝淘</h4>
+        <a href="help.html#about-us">关于我们</a>
+        <a href="help.html#contact-us">联系我们</a>
+        <a href="help.html#legal-notice">法律声明</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 宝淘 版权所有 | 仅供学习交流使用</p>
+      <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+</body>
+</html>

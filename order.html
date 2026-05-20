@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提交订单 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+
+<header class="order-header">
+  <div class="container flex-between">
+    <a href="index.html" class="logo-link">
+      <div class="logo-icon">🍑</div>宝淘
+    </a>
+    <div class="order-steps">
+      <span class="step active">① 确认订单</span>
+      <span class="step-sep">—</span>
+      <span class="step">② 付款</span>
+      <span class="step-sep">—</span>
+      <span class="step">③ 完成</span>
+    </div>
+  </div>
+</header>
+
+<main class="order-main">
+  <div class="container">
+    <h2 class="page-title">确认订单</h2>
+
+    <!-- 收货信息 -->
+    <div class="order-card">
+      <div class="card-title">📍 收货信息</div>
+      <div class="address-form">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label">收件人姓名 <span class="required">*</span></label>
+            <input id="receiverName" type="text" class="form-input" placeholder="请输入收件人姓名">
+            <p class="form-error" id="errReceiverName"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">联系电话 <span class="required">*</span></label>
+            <input id="receiverPhone" type="tel" class="form-input" placeholder="11位手机号">
+            <p class="form-error" id="errReceiverPhone"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">详细地址 <span class="required">*</span></label>
+          <input id="receiverAddress" type="text" class="form-input" placeholder="省/市/区 + 详细地址">
+          <p class="form-error" id="errReceiverAddress"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 商品清单 -->
+    <div class="order-card">
+      <div class="card-title">🛍️ 商品清单</div>
+      <div id="orderItemList">
+        <div class="loading-wrap"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <!-- 订单汇总 -->
+    <div class="order-card order-summary-card">
+      <div class="summary-row">
+        <span>商品总价</span>
+        <span id="goodsTotal">¥0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>运费</span>
+        <span class="text-primary">免运费</span>
+      </div>
+      <div class="summary-row summary-total">
+        <span>实付款</span>
+        <span class="total-price" id="orderTotal">¥0.00</span>
+      </div>
+    </div>
+
+    <!-- 提交按钮 -->
+    <div class="order-submit-bar">
+      <div class="submit-total">
+        应付：<em id="submitTotal">¥0.00</em>
+      </div>
+      <button class="btn btn-primary btn-lg" id="submitOrderBtn" onclick="submitOrder()">提交订单</button>
+    </div>
+  </div>
+</main>
+
+<footer class="main-footer" style="margin-top:0">
+  <div class="container footer-bottom">
+    <p>© 2024 宝淘 | 仅供学习使用</p>
+    <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>支付结算 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+<header class="order-header">
+  <div class="container flex-between">
+    <a href="index.html" class="logo-link">
+      <div class="logo-icon">🍑</div>宝淘
+    </a>
+    <div class="order-steps">
+      <span class="step done">✓ 确认订单</span>
+      <span class="step-sep">—</span>
+      <span class="step active">② 付款</span>
+      <span class="step-sep">—</span>
+      <span class="step">③ 完成</span>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <div class="container">
+
+    <div class="checkout-card" id="payCard">
+      <div class="pay-header">
+        <div class="pay-amount-label">待支付金额</div>
+        <div class="pay-amount" id="payAmount">¥0.00</div>
+        <div class="pay-order-id">订单号：<span id="orderId">—</span></div>
+      </div>
+
+      <div class="pay-methods">
+        <div class="pay-method-title">选择支付方式</div>
+        <div class="pay-method-list">
+          <label class="pay-method active" data-method="alipay">
+            <input type="radio" name="payMethod" value="alipay" checked hidden>
+            <span class="method-icon">💳</span>
+            <span class="method-name">支付宝</span>
+          </label>
+          <label class="pay-method" data-method="wechat">
+            <input type="radio" name="payMethod" value="wechat" hidden>
+            <span class="method-icon">💚</span>
+            <span class="method-name">微信支付</span>
+          </label>
+          <label class="pay-method" data-method="bank">
+            <input type="radio" name="payMethod" value="bank" hidden>
+            <span class="method-icon">🏦</span>
+            <span class="method-name">银行卡</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="pay-security">
+        <span>🔒 安全支付保障中</span>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-block pay-btn" id="payBtn" onclick="confirmPay()">
+        确认支付
+      </button>
+      <div class="pay-cancel">
+        <a href="user.html#orders">稍后付款，查看订单</a>
+      </div>
+    </div>
+
+    <!-- 支付成功状态 -->
+    <div class="checkout-success hidden" id="successCard">
+      <div class="success-icon-wrap">
+        <div class="success-icon">
+          <svg viewBox="0 0 52 52" class="checkmark">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14 27 l7 7 l17-17"/>
+          </svg>
+        </div>
+      </div>
+      <h2 class="success-title">支付成功！</h2>
+      <p class="success-desc">您的订单已成功付款，等待商家发货</p>
+      <div class="success-actions">
+        <a href="user.html#orders" class="btn btn-primary">查看订单</a>
+        <a href="index.html" class="btn btn-outline">继续购物</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="main-footer" style="margin-top:0">
+  <div class="container footer-bottom">
+    <p>© 2024 宝淘 | 仅供学习使用</p>
+    <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

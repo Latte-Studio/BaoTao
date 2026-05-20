@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品详情 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<!-- 顶部通知栏 -->
+<div class="notice-bar">
+  <div class="container flex-between">
+    <span>欢迎来到宝淘！</span>
+    <div class="notice-links">
+      <a href="login.html">请登录</a>
+      <a href="register.html">免费注册</a>
+      <a href="user.html">我的淘宝</a>
+      <a href="cart.html">购物车</a>
+    </div>
+  </div>
+</div>
+
+<header class="main-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="index.html"><div class="logo-icon">🍑</div>宝淘</a></div>
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="搜索商品...">
+      <button id="searchBtn">搜索</button>
+    </div>
+    <div class="header-actions">
+      <div id="headerUserArea"><a href="login.html">登录</a> | <a href="register.html">注册</a></div>
+      <a href="cart.html" class="cart-btn">🛒 购物车 <span class="cart-count" id="cartCount" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="container">
+    <div class="breadcrumb" id="breadcrumb">
+      <a href="index.html">首页</a> <span class="sep">›</span>
+      <span id="bcCategory">分类</span> <span class="sep">›</span>
+      <span class="current" id="bcName">商品详情</span>
+    </div>
+
+    <div id="productDetail">
+      <div class="loading-wrap"><div class="spinner"></div><span>加载商品信息...</span></div>
+    </div>
+
+    <!-- 推荐商品 -->
+    <div class="related-section">
+      <div class="section-header">
+        <h3 class="section-title">相关推荐</h3>
+      </div>
+      <div class="product-grid" id="relatedGrid">
+        <div class="loading-wrap" style="grid-column:1/-1"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col"><h4>购物指南</h4><a href="help.html#shopping-flow">购物流程</a><a href="help.html#member-rights">会员权益</a></div>
+      <div class="footer-col"><h4>配送服务</h4><a href="help.html#delivery-methods">配送方式</a><a href="help.html#shipping-fee">运费说明</a></div>
+      <div class="footer-col"><h4>售后服务</h4><a href="help.html#refund-guide">退款说明</a><a href="help.html#return-policy">退换货</a></div>
+      <div class="footer-col"><h4>关于我们</h4><a href="help.html#about-us">关于宝淘</a><a href="help.html#contact-us">联系我们</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 宝淘 | 仅供学习使用</p>
+      <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

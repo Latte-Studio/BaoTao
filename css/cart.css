@@ -1,0 +1,136 @@
+/* ==========================================
+   购物车样式 - cart.css
+   ========================================== */
+.page-main { padding: 0 0 40px; }
+.cart-page {}
+
+/* ---- 列表头 ---- */
+.cart-header {
+    display: grid;
+    grid-template-columns: 28px 1fr 100px 120px 100px 80px;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 12px 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+}
+.check-all-wrap {
+    display: flex; align-items: center; gap: 6px;
+    cursor: pointer; font-size: 13px; color: var(--text-secondary);
+    user-select: none;
+}
+.check-all-wrap input[type=checkbox] { cursor: pointer; width: 16px; height: 16px; accent-color: var(--primary); }
+
+/* ---- 购物车项 ---- */
+#cartList { background: #fff; }
+.cart-item {
+    display: grid;
+    grid-template-columns: 28px 1fr 100px 120px 100px 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background .2s;
+    animation: fadeInUp .3s ease;
+}
+.cart-item:hover { background: #fafafa; }
+.cart-item.removing {
+    animation: removeItem .3s ease forwards;
+    overflow: hidden;
+}
+@keyframes removeItem {
+    to { height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; }
+}
+.item-checkbox { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+
+/* 商品信息列 */
+.item-product { display: flex; align-items: center; gap: 12px; }
+.item-img {
+    width: 80px; height: 80px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+    transition: transform .3s;
+    cursor: pointer;
+}
+.item-img:hover { transform: scale(1.08); }
+.item-name {
+    font-size: 13px;
+    color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    cursor: pointer;
+}
+.item-name:hover { color: var(--primary); }
+.item-offline { font-size: 11px; color: var(--danger); margin-top: 4px; }
+
+/* 价格列 */
+.item-price { color: var(--secondary); font-weight: 600; font-size: 14px; }
+.item-price::before { content: '¥'; font-size: 12px; }
+
+/* 数量列 */
+.item-qty {
+    display: flex; align-items: center; gap: 0;
+}
+.qty-btn-sm {
+    width: 26px; height: 26px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+    color: var(--text-secondary);
+}
+.qty-btn-sm:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.qty-btn-sm:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.qty-btn-sm:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.qty-num {
+    width: 40px; height: 26px;
+    border: 1px solid var(--border); border-left: none; border-right: none;
+    text-align: center; font-size: 13px; font-weight: 600;
+}
+
+/* 小计列 */
+.item-subtotal { color: var(--secondary); font-weight: 700; font-size: 15px; }
+.item-subtotal::before { content: '¥'; font-size: 12px; }
+
+/* 操作列 */
+.item-action { text-align: center; }
+.del-btn {
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 4px;
+}
+.del-btn:hover { color: var(--danger); }
+
+/* ---- 结算底栏 ---- */
+.cart-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-top: 2px solid var(--primary);
+    padding: 14px 20px;
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+    box-shadow: 0 -4px 12px rgba(0,0,0,.08);
+}
+.cart-footer-left { display: flex; align-items: center; gap: 16px; }
+.cart-footer-right { display: flex; align-items: center; gap: 20px; }
+.cart-summary { font-size: 14px; color: var(--text-secondary); }
+.total-price em { font-size: 20px; font-weight: 700; color: var(--secondary); font-style: normal; }
+.cart-checkout-btn {
+    min-width: 140px;
+    border-radius: 23px;
+    font-size: 16px;
+}

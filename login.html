@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+<header class="auth-header">
+  <div class="container flex-between">
+    <a href="index.html" class="logo-link">
+      <div class="logo-icon">🍑</div>
+      <span>宝淘</span>
+    </a>
+    <span class="auth-slogan">安全登录，畅享购物</span>
+  </div>
+</header>
+
+<main class="auth-main">
+  <div class="auth-card">
+    <div class="auth-tabs">
+      <div class="tab-item active" id="tabLogin">账号登录</div>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label class="form-label">用户名 <span class="required">*</span></label>
+        <input id="username" name="username" type="text" class="form-input" placeholder="请输入用户名" autocomplete="username">
+        <p class="form-error" id="errUsername"></p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">密码 <span class="required">*</span></label>
+        <div class="pwd-wrap">
+          <input id="password" name="password" type="password" class="form-input" placeholder="请输入密码" autocomplete="current-password">
+          <button type="button" class="pwd-toggle" id="pwdToggle">👁</button>
+        </div>
+        <p class="form-error" id="errPassword"></p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginBtn">登录</button>
+    </form>
+
+    <div class="auth-footer-links">
+      <span>没有账号？</span>
+      <a href="register.html">立即注册</a>
+    </div>
+
+    <div class="demo-accounts">
+      <p class="demo-title">体验账号 (密码均为 123456)</p>
+      <div class="demo-list">
+        <button class="demo-btn" data-user="buyer01">买家账号</button>
+        <button class="demo-btn" data-user="seller01">卖家账号</button>
+        <button class="demo-btn" data-user="admin">管理员</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="main-footer" style="margin-top:0">
+  <div class="container footer-bottom">
+    <p>© 2024 宝淘 | 仅供学习使用</p>
+    <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

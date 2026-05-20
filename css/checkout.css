@@ -1,0 +1,119 @@
+/* ==========================================
+   结算页样式 - checkout.css
+   ========================================== */
+
+.order-header {
+    background: #fff;
+    border-bottom: 2px solid var(--primary);
+    padding: 14px 0;
+}
+.order-header .logo-link {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 22px; font-weight: 900; color: var(--primary);
+}
+.order-header .logo-link .logo-icon {
+    width: 30px; height: 30px; background: var(--primary); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px;
+}
+.order-steps { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); }
+.step { padding: 4px 10px; border-radius: 20px; }
+.step.active { background: var(--primary); color: #fff; }
+.step.done { background: var(--success); color: #fff; }
+.step-sep { color: #ccc; }
+
+.checkout-main { padding: 40px 0 80px; }
+.checkout-card {
+    max-width: 480px; margin: 0 auto;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: fadeInUp .4s ease;
+}
+
+/* 支付金额头部 */
+.pay-header {
+    background: linear-gradient(135deg, var(--primary), #ff8c00);
+    color: #fff;
+    text-align: center;
+    padding: 32px 24px 24px;
+}
+.pay-amount-label { font-size: 14px; opacity: .85; margin-bottom: 8px; }
+.pay-amount { font-size: 40px; font-weight: 900; margin-bottom: 8px; }
+.pay-amount::before { content: '¥'; font-size: 22px; }
+.pay-order-id { font-size: 12px; opacity: .7; }
+
+/* 支付方式 */
+.pay-methods { padding: 24px 24px 16px; }
+.pay-method-title { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
+.pay-method-list { display: flex; flex-direction: column; gap: 10px; }
+.pay-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.pay-method:hover { border-color: var(--primary); background: #fff8f6; }
+.pay-method.active { border-color: var(--primary); background: #fff5f0; }
+.method-icon { font-size: 24px; }
+.method-name { font-size: 15px; font-weight: 500; }
+
+/* 安全提示 */
+.pay-security {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 4px 24px 16px;
+}
+
+/* 支付按钮 */
+.pay-btn {
+    margin: 0 24px 12px;
+    width: calc(100% - 48px);
+    border-radius: 24px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.pay-cancel { text-align: center; padding-bottom: 20px; }
+.pay-cancel a { font-size: 13px; color: var(--text-muted); }
+.pay-cancel a:hover { color: var(--primary); }
+
+/* ---- 成功状态 ---- */
+.checkout-success {
+    max-width: 480px; margin: 0 auto;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 48px 32px;
+    text-align: center;
+    animation: fadeInUp .5s ease;
+}
+.success-icon-wrap { margin-bottom: 24px; }
+.success-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto;
+}
+
+/* SVG 勾选动画 */
+.checkmark { stroke: var(--success); stroke-width: 2; }
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: stroke .6s cubic-bezier(.65,0,.45,1) forwards;
+}
+.checkmark-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke .3s cubic-bezier(.65,0,.45,1) .8s forwards;
+}
+@keyframes stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+.success-title { font-size: 24px; font-weight: 700; color: var(--success); margin-bottom: 8px; }
+.success-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
+.success-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }

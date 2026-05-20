@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>购物车 - 宝淘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+<div class="notice-bar">
+  <div class="container flex-between">
+    <span>欢迎来到宝淘！</span>
+    <div class="notice-links">
+      <a href="login.html">请登录</a><a href="register.html">免费注册</a><a href="user.html">我的淘宝</a>
+    </div>
+  </div>
+</div>
+
+<header class="main-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="index.html"><div class="logo-icon">🍑</div>宝淘</a></div>
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="搜索商品...">
+      <button id="searchBtn">搜索</button>
+    </div>
+    <div class="header-actions">
+      <div id="headerUserArea"><a href="login.html">登录</a> | <a href="register.html">注册</a></div>
+      <a href="cart.html" class="cart-btn">🛒 购物车 <span class="cart-count" id="cartCount" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span class="sep">›</span><span class="current">购物车</span>
+    </div>
+
+    <div class="cart-page">
+      <!-- 购物车列表 -->
+      <div class="cart-main">
+        <div class="cart-header">
+          <label class="check-all-wrap">
+            <input type="checkbox" id="checkAll" onchange="toggleAll(this.checked)">
+            <span>全选</span>
+          </label>
+          <span class="col-product">商品信息</span>
+          <span class="col-price">单价</span>
+          <span class="col-qty">数量</span>
+          <span class="col-subtotal">小计</span>
+          <span class="col-action">操作</span>
+        </div>
+
+        <div id="cartList">
+          <div class="loading-wrap"><div class="spinner"></div><span>加载中...</span></div>
+        </div>
+      </div>
+
+      <!-- 结算栏 -->
+      <div class="cart-footer">
+        <div class="cart-footer-left">
+          <label class="check-all-wrap">
+            <input type="checkbox" id="checkAll2" onchange="toggleAll(this.checked)">
+            <span>全选</span>
+          </label>
+          <button class="btn btn-sm btn-outline" onclick="deleteSelected()">删除选中</button>
+        </div>
+        <div class="cart-footer-right">
+          <div class="cart-summary">
+            已选 <span id="selectedCount" class="text-primary">0</span> 件 &nbsp;|&nbsp;
+            合计：<span class="total-price"><em id="totalPrice">¥0.00</em></span>
+          </div>
+          <button class="btn btn-primary btn-lg cart-checkout-btn" id="checkoutBtn" onclick="goCheckout()">去结算</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="main-footer">
+  <div class="container footer-bottom">
+    <p>© 2024 宝淘 | 仅供学习使用</p>
+    <p class="student-info">学号：****** &nbsp;|&nbsp; 姓名：******</p>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
